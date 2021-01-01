@@ -73,4 +73,6 @@ while s != times:
         print("goodjob , YOU WIN ! , the word was : ")
         outoflist(wlist_win)
         s = times
+    if wlist != wlist_win and s == times:
+        print("oh you lose :( , the word was " , word)      
     print("\n------------------------------------------------------\n")
