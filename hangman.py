@@ -32,7 +32,6 @@ def words_file():
     return word
 #the vars and list 
 wlist_full = []
-wlist_win = []
 wlist = []
 s = 0 
 word = words_file()
@@ -42,7 +41,6 @@ print("\n------------------------------------------------------\n")
 for i in range(len(word)):
     wlist.append(" - ")
     wlist_full.append(word[i])
-    wlist_win.append(word[i])
 #the main loop of the game     
 while s != times:
     print("Guess : ")
@@ -55,7 +53,6 @@ while s != times:
             for i in range(len(word)):
                 if wlist_full[i] == n:
                     re_place(wlist,i,n)
-                    re_place(wlist_full,wlist_full.index(n),"-")
             outoflist(wlist)                     
         else:
             print("Wrong letter ! please try again")
@@ -69,10 +66,10 @@ while s != times:
             print("Wrong word ! please try again ") 
             outoflist(wlist)
     #if user guesses all letters correct
-    if wlist == wlist_win :
+    if wlist == wlist_full :
         print("goodjob , YOU WIN ! , the word was : ")
-        outoflist(wlist_win)
+        outoflist(wlist_full)
         s = times
-    if wlist != wlist_win and s == times:
-        print("oh you lose :( , the word was " , word)      
+    if wlist != wlist_full and s == times:
+        print("oh you lose :( , the word was " , word)    
     print("\n------------------------------------------------------\n")
